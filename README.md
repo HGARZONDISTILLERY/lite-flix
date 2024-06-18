@@ -1,1 +1,1 @@
-# lite-flix
+# Liteflix

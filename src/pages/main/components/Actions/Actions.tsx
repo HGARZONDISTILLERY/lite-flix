@@ -10,7 +10,7 @@ const Actions = () => {
           <button className='primaryAction'><PlayArrowOutlinedIcon />Reproducir</button>
         </Grid>
         <Grid item xs={8}>
-        <button className='secondaryAction'>+ Mi Lista</button>
+          <button className='secondaryAction'>+ Mi Lista</button>
         </Grid>
     </Grid>
 

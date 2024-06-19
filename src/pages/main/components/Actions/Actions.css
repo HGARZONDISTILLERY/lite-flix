@@ -1,0 +1,19 @@
+.primaryAction,
+.secondaryAction {
+  font-family: 'Bebas Neue', 'Arial', 'sans-serif';
+}
+
+.primaryAction {
+  background-color: #242424;
+  width: 248px;
+  height: 56px;
+  text-transform: uppercase;
+}
+
+.secondaryAction {
+  background-color: rgba(36, 36, 36, 0.5);
+  width: 248px;
+  height: 56px;
+  text-transform: uppercase;
+  border: 1px solid #242424;
+}

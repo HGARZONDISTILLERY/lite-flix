@@ -1,7 +1,6 @@
 // import { useRef } from "react"
 
 import { Box } from "@mui/material"
-import Aside from "./aside/Aside"
 import Header from "./header/Header"
 import Main from "./main/Main"
 
@@ -10,7 +9,6 @@ const Home = () => {
     <Box sx={{ width: '100vw', height: '100vh' }}>
       <Header />
       <Main />
-      <Aside />
     </Box>
   )
 }

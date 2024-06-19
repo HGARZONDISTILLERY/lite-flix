@@ -5,13 +5,13 @@ import Actions from "./components/Actions/Actions"
 
 const Main = () => {
   return(
-    <Box component="main" sx={{marginTop: '20%'}}>
+    <Box component="main">
       <Grid container>
-        <Grid item xs={8}>
+        <Grid item xs={8} component={"section"}>
           <Title />
           <Actions />
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={4} component={"aside"}>
           <Aside />
         </Grid>
       </Grid>

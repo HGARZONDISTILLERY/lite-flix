@@ -1,0 +1,26 @@
+.movieListItem {
+  background-image: url('../../../../assets/list-item-image.jpeg');
+  border-radius: 5px;
+  width: 220px;
+  height: 146px;
+  text-align: center;
+  margin: 20px auto 0;
+  position: relative;
+}
+
+.movieListItem p {
+  color: #fff;
+  font-family: 'Bebas Neue', 'Arial', 'sans-serif';
+}
+
+.movieListItem svg {
+  color: #fff;
+  height: 40px;
+  width: 40px;
+}
+
+.movieListItemDetails {
+  position: absolute;
+  bottom: 0;
+  width: 220px;
+}

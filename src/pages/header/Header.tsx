@@ -1,7 +1,7 @@
 import { Grid } from '@mui/material'
 import './Header.css'
 import Logo from './components/Logo/Logo'
-import NavigationHeader from './components/BasicMenu/NavigationHeader'
+import NavigationHeader from './components/NavigationHeader/NavigationHeader'
 import AddMovie from './components/AddMovie/AddMovie'
 
 const Header = () => {

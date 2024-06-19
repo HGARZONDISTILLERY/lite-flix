@@ -1,6 +1,6 @@
 import React from "react";
 
-import { FormControl, MenuItem, Select, SelectChangeEvent } from "@mui/material"
+import { Box, FormControl, MenuItem, Select, SelectChangeEvent } from "@mui/material"
 import MovieListItem from "../MovieListItem";
 
 const MovieList = () => {
@@ -14,6 +14,7 @@ const MovieList = () => {
     <>
       <FormControl sx={{
         width: '200px',
+        margin: '0 auto'
       }}>
         <Select
           labelId="movie-list-label"
@@ -26,10 +27,12 @@ const MovieList = () => {
           <MenuItem value={20}>Twenty</MenuItem>
         </Select>
       </FormControl>
-      <MovieListItem />
-      <MovieListItem />
-      <MovieListItem />
-      <MovieListItem />
+      <Box sx={{display: 'flex', flexDirection: 'column', alignContent: 'center', flexWrap: 'wrap'}}>
+        <MovieListItem />
+        <MovieListItem />
+        <MovieListItem />
+        <MovieListItem />
+      </Box>
     </>
   )
 }

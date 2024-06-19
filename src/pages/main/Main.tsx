@@ -7,7 +7,7 @@ const Main = () => {
   return(
     <Box component="main">
       <Grid container>
-        <Grid item xs={8} component={"section"}>
+        <Grid item xs={8} component={"section"} sx={{marginTop: '30%'}}>
           <Title />
           <Actions />
         </Grid>

@@ -1,8 +1,5 @@
 import axios from 'axios';
-import { NowPlayingMoviesResponse } from './types';
-
-const API_KEY = '6f26fd536dd6192ec8a57e94141f8b20';
-const BASE_URL = 'https://api.themoviedb.org/3';
+import { API_KEY, BASE_URL, NowPlayingMoviesResponse, PopularMoviesResponse } from './types';
 
 export const fetchNowPlayingMovies = async (): Promise<NowPlayingMoviesResponse> => {
   try {
@@ -14,6 +11,20 @@ export const fetchNowPlayingMovies = async (): Promise<NowPlayingMoviesResponse>
     return response.data;
   } catch (error) {
     console.error('Error fetching now playing movies:', error);
+    throw error;
+  }
+};
+
+export const fetchPopularMovies = async (): Promise<PopularMoviesResponse> => {
+  try {
+    const response = await axios.get<PopularMoviesResponse>(`${BASE_URL}/movie/popular`, {
+      params: {
+        api_key: API_KEY,
+      },
+    });
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching popular movies:', error);
     throw error;
   }
 };

@@ -2,12 +2,18 @@ import React from "react";
 
 import { Box, FormControl, MenuItem, Select, SelectChangeEvent } from "@mui/material"
 import MovieListItem from "../MovieListItem";
+import { PopularMovie } from "../../../../api/types";
 
-const MovieList = () => {
-  const [movieList, setMovieList] = React.useState('')
+interface MovieListProps {
+  popularMovies: PopularMovie[];
+}
+
+const MovieList = ({ popularMovies }: MovieListProps) => {
+  const [dropdownOption, setDropdownOption] = React.useState('')
+  const maxAmountOfMovies = 4
 
   const handleChange = (event: SelectChangeEvent) => {
-    setMovieList(String(event.target.value))
+    setDropdownOption(String(event.target.value))
   }
   
   return(
@@ -19,7 +25,7 @@ const MovieList = () => {
         <Select
           labelId="movie-list-label"
           id="movie-list-select"
-          value={movieList}
+          value={dropdownOption}
           defaultValue="Populares"
           onChange={handleChange}
         >
@@ -28,10 +34,9 @@ const MovieList = () => {
         </Select>
       </FormControl>
       <Box sx={{display: 'flex', flexDirection: 'column', alignContent: 'center', flexWrap: 'wrap'}}>
-        <MovieListItem />
-        <MovieListItem />
-        <MovieListItem />
-        <MovieListItem />
+      {popularMovies?.slice(0, maxAmountOfMovies).map(movie => (
+        <MovieListItem movie={movie} key={movie?.id} />
+      ))}
       </Box>
     </>
   )

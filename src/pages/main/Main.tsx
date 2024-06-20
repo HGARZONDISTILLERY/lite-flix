@@ -19,7 +19,7 @@ const Main = ({ featuredMovie }: MainProps) => {
           <Actions />
         </Grid>
         <Grid item xs={4} component={"aside"}>
-          <Aside />
+          <Aside featuredMovieTitle={String(featuredMovie?.original_title)} />
         </Grid>
       </Grid>
     </Box>

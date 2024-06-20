@@ -14,7 +14,7 @@ const Main = ({ featuredMovie }: MainProps) => {
   return(
     <Box component="main">
       <Grid container>
-        <Grid item xs={8} component={"section"} sx={{marginTop: '30%'}}>
+        <Grid item xs={8} component={"section"} sx={{marginTop: '22%'}}>
           <Title featuredMovieTitle={String(featuredMovie?.original_title)} />
           <Actions />
         </Grid>

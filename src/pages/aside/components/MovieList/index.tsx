@@ -18,8 +18,6 @@ const MovieList = ({ popularMovies, featuredMovieTitle }: MovieListProps) => {
     setDropdownOption(String(event.target.value))
   }
 
-  console.log('>>>', featuredMovieTitle)
-
   useEffect(() => {
     setCleanMovieList(popularMovies?.filter(movie => {
       return movie?.original_title !== featuredMovieTitle
@@ -43,10 +41,10 @@ const MovieList = ({ popularMovies, featuredMovieTitle }: MovieListProps) => {
           <MenuItem value={20}>Twenty</MenuItem>
         </Select>
       </FormControl>
-      <Box sx={{display: 'flex', flexDirection: 'column', alignContent: 'center', flexWrap: 'wrap'}}>
-      {cleanMovieList?.slice(0, maxAmountOfMovies).map(movie => (
-        <MovieListItem movie={movie} key={movie?.id} />
-      ))}
+      <Box sx={{display: 'flex', flexDirection: 'column', alignContent: 'flex-end', flexWrap: 'wrap', paddingRight: '114px'}}>
+        {cleanMovieList?.slice(0, maxAmountOfMovies).map(movie => (
+          <MovieListItem movie={movie} key={movie?.id} />
+        ))}
       </Box>
     </>
   )

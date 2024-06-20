@@ -38,12 +38,12 @@ const TemporaryDrawer = () => {
         ))}
         <ListItem key='+ Agregar pelicula' disablePadding>
           <ListItemButton>
-            <ListItemText disableTypography sx={{ fontFamily: 'Bebas Neue' }} primary='+ Agregar pelicula' />
+            <ListItemText disableTypography sx={{ fontFamily: 'Bebas Neue', margin: '30px 0' }} primary='+ Agregar pelicula' />
           </ListItemButton>
         </ListItem>
         <ListItem key='Cerrar sesion' disablePadding>
           <ListItemButton>
-            <ListItemText disableTypography sx={{ fontFamily: 'Bebas Neue' }} primary='Cerrar sesion' />
+            <ListItemText disableTypography sx={{ fontFamily: 'Bebas Neue', opacity: 0.5 }} primary='Cerrar sesion' />
           </ListItemButton>
         </ListItem>
       </List>

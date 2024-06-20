@@ -11,7 +11,7 @@ interface MovieListProps {
 const MovieListItem = ({ movie }: MovieListProps) => {
   const movieBackgroundImage = {
     backgroundImage: `url(${IMAGES_BASE_URL}w500${movie?.backdrop_path})`,
-  };
+  }
 
   return(
     <Box className="movieListItem" style={movieBackgroundImage}>

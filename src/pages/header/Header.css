@@ -1,6 +1,8 @@
 header {
-  position: sticky;
+  position: absolute;
   top: 0;
   padding: 32px 104px;
   text-align: left;
+  right: 0;
+  left: 0;
 }

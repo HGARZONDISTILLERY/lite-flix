@@ -40,7 +40,11 @@ const Home = () => {
   if (error) return <div>Error fetching movies: {error?.message}</div>
 
   return(
-    <Box sx={{ width: '100vw', height: '100vh', backgroundImage: `url(${IMAGES_BASE_URL}original${featuredMovie?.poster_path})` }}>
+    <Box sx={{
+      width: '100vw',
+      backgroundImage: `url(${IMAGES_BASE_URL}original${featuredMovie?.poster_path})`,
+      paddingBottom: '114px',
+      }}>
       <Header />
       <Main featuredMovie={featuredMovie} />
     </Box>

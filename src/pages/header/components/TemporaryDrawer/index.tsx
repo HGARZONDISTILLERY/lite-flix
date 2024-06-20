@@ -6,6 +6,7 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
 
 const TemporaryDrawer = () => {
   const [open, setOpen] = React.useState(false);
@@ -17,8 +18,17 @@ const TemporaryDrawer = () => {
   const drawerElements = ['Inicio', 'Series', 'Peliculas', 'Agregaras recientemente', 'Populares', 'Mis peliculas', 'Mi lista']
 
   const DrawerList = (
-    <Box role="presentation" onClick={toggleDrawer(false)}>
-      <List>
+    <Box role="presentation" onClick={toggleDrawer(false)} sx={{position: 'relative'}}>
+      <Box sx={{
+        marginTop: '30px',
+        marginLeft: '55px',
+        padding: '5px',
+        cursor: 'pointer',
+        width: '30px'
+        }}>
+        <CloseIcon onClick={toggleDrawer(false)} />
+      </Box>
+      <List sx={{marginLeft: '52px', marginTop: '30px'}}>
         {drawerElements.map((text) => (
           <ListItem key={text} disablePadding>
             <ListItemButton>

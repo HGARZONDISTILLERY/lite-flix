@@ -1,4 +1,3 @@
-import { Movie } from '../../../../api/types';
 import './Title.css'
 
 import { Box } from "@mui/material"

@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 
-import { Box, FormControl, MenuItem, Select, SelectChangeEvent } from "@mui/material"
+import { Box } from "@mui/material"
 import MovieListItem from "../MovieListItem";
 import { PopularMovie } from "../../../../api/types";
+import PositionedMenu from "../PositionedMenu";
 
 interface MovieListProps {
   popularMovies: PopularMovie[]
@@ -10,13 +11,8 @@ interface MovieListProps {
 }
 
 const MovieList = ({ popularMovies, featuredMovieTitle }: MovieListProps) => {
-  const [dropdownOption, setDropdownOption] = useState('')
   const [cleanMovieList, setCleanMovieList] = useState<PopularMovie[]>()
   const maxAmountOfMovies = 4
-
-  const handleChange = (event: SelectChangeEvent) => {
-    setDropdownOption(String(event.target.value))
-  }
 
   useEffect(() => {
     setCleanMovieList(popularMovies?.filter(movie => {
@@ -26,21 +22,16 @@ const MovieList = ({ popularMovies, featuredMovieTitle }: MovieListProps) => {
   
   return(
     <>
-      <FormControl sx={{
-        width: '200px',
-        margin: '0 auto'
+      <Box sx={{
+        color: '#fff',
+        display: 'flex',
+        justifyContent: 'end',
+        alignItems: 'center',
+        paddingRight: '130px'
       }}>
-        <Select
-          labelId="movie-list-label"
-          id="movie-list-select"
-          value={dropdownOption}
-          defaultValue="Populares"
-          onChange={handleChange}
-        >
-          <MenuItem value={10}>Ten</MenuItem>
-          <MenuItem value={20}>Twenty</MenuItem>
-        </Select>
-      </FormControl>
+        Ver:
+        <PositionedMenu />
+      </Box>
       <Box sx={{display: 'flex', flexDirection: 'column', alignContent: 'flex-end', flexWrap: 'wrap', paddingRight: '114px'}}>
         {cleanMovieList?.slice(0, maxAmountOfMovies).map(movie => (
           <MovieListItem movie={movie} key={movie?.id} />

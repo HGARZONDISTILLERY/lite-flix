@@ -1,9 +1,4 @@
 #root {
   text-align: center;
-  background-image: url('./assets/big-pine-landscape-test-image.jpeg');
-  background-position: 'center';
-  background-size: 'cover';
-  background-repeat: 'no-repeat';
   width: '100vw';
-  height: '100vh';
 }

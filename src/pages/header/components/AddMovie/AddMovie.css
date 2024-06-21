@@ -31,6 +31,15 @@ button {
   padding: 0;
 }
 
-p {
+div.dropzone {
+  background-color: transparent;
+  border: 2px dashed #fff;
+  margin-top: 30px;
+  height: 112px;
+}
 
+div.dropzone p {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
 }

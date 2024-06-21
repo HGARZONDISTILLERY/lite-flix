@@ -1,5 +1,6 @@
 import axios from 'axios';
-import { API_KEY, BASE_URL, NowPlayingMoviesResponse, PopularMoviesResponse } from './types';
+import { NowPlayingMoviesResponse, PopularMoviesResponse } from './types';
+import { BASE_URL, API_KEY } from '../utils/constants';
 
 export const fetchNowPlayingMovies = async (): Promise<NowPlayingMoviesResponse> => {
   try {

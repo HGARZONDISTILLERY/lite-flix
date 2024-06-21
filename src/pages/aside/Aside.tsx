@@ -10,7 +10,6 @@ interface AsideProps {
 }
 
 const Aside = ({ featuredMovieTitle }: AsideProps) => {
-  console.log('featuredMovie in Aside', featuredMovieTitle)
   const [popularMovies, setPopularMovies] = useState<PopularMoviesResponse | {results: []} | undefined>({results: []})  
   const { data, error, isLoading } = useQuery<PopularMoviesResponse>('popularMovies', fetchPopularMovies)
 

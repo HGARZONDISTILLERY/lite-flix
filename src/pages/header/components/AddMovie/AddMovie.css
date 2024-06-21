@@ -31,6 +31,10 @@ button {
   padding: 0;
 }
 
+.dropzone {
+  padding: 0 20px;
+}
+
 div.dropzone {
   background-color: transparent;
   border: 2px dashed #fff;

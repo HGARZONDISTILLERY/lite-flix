@@ -2,7 +2,8 @@ import './AddMovie.css'
 
 import { useEffect, useState, useRef } from 'react'
 import {ref, uploadBytes, listAll, getDownloadURL } from 'firebase/storage'
-import { storage } from '../../../../firebase'
+import { storage, firestore } from '../../../../firebase'
+import { addDoc, collection } from 'firebase/firestore'
 
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
@@ -14,6 +15,7 @@ import { styled } from '@mui/material/styles'
 import CloseIcon from '@mui/icons-material/Close'
 
 import Clip from '../../../../assets/icons/Clip'
+import { MyMovieElement } from '../../../../api/types'
 
 // Styled component example
 const CustomTextField = styled(TextField)({
@@ -59,6 +61,7 @@ const containerMovieModalStyle = {
 };
 
 const imageListRef = ref(storage, "images/")
+const firebaseDbRef = collection(firestore, "movies")
 
 const AddMovie = () => {
   const [open, setOpen] = useState(false)
@@ -66,6 +69,7 @@ const AddMovie = () => {
   const handleClose = () => setOpen(false)
   const [movieFileData, setMovieFile] = useState<any>()
   const [imageList, setImageList] = useState<string[]>([])
+  const [movieElement, setMovieElement] = useState<MyMovieElement>({})
 
   const titleRef = useRef<HTMLInputElement>(null)
 
@@ -80,6 +84,9 @@ const AddMovie = () => {
     uploadBytes(imageRef, file).then((snapshot) => {
       getDownloadURL(snapshot.ref).then(url => {
         setImageList(prev => [...prev, url])
+        if (titleRef.current !== null) {
+          setMovieElement({title: String(titleRef.current.value), image: url})
+        }
       })
     }).catch((error) => {
       console.error('Error uploading file:', error)
@@ -101,12 +108,17 @@ const AddMovie = () => {
   }, [])
 
   useEffect(() => {
+    if (titleRef.current !== null) {
+      try {
+        addDoc(firebaseDbRef, movieElement)
+      } catch(e) {
+        console.error(e)
+      }
+    }
+  }, [titleRef, firebaseDbRef, movieElement])
+
+  useEffect(() => {
     const curatedImageList = [...new Set(imageList)]
-    console.log('curatedImageList', curatedImageList)
-    // Crear un objeto con la url de la imagen y el nombre
-    // Tiene que ser un estado que esté más arriba para que lo pueda consumir desde el Aside
-    // O lo puedo guardar en la DB como strings en https://www.youtube.com/watch?v=ad6IavyAHsQ
-    // Faltan los modales que manejan el estado de la subida
   }, [imageList])
 
   return (

@@ -3,7 +3,7 @@ import './Header.css'
 import Logo from './components/Logo/Logo'
 import NavigationHeader from './components/NavigationHeader/NavigationHeader'
 import AddMovie from './components/AddMovie/AddMovie'
-import Menu from '../../assets/icons/menu'
+import Hamburguer from '../../assets/icons/Menu'
 
 const Header = () => {
   const isMobile = useMediaQuery('(max-width:900px)')
@@ -16,7 +16,7 @@ const Header = () => {
           <Grid item xs={2} sx={{
             padding: '10px',
           }}>
-            <Menu />
+            <Hamburguer />
           </Grid>
           <Grid item xs={8} sx={{textAlign: 'center'}}>
             <Logo />

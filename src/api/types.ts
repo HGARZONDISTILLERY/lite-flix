@@ -53,3 +53,8 @@ export interface PopularMovie {
   vote_average: number;
   vote_count: number;
 }
+
+export interface MyMovieElement {
+  title?: string
+  image?: string
+}

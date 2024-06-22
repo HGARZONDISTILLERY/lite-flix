@@ -7,7 +7,7 @@ import Main from "./main/Main"
 import { useState, useEffect } from 'react'
 import { useQuery } from 'react-query'
 import { fetchNowPlayingMovies } from '../api'
-import { Movie, NowPlayingMoviesResponse, CustomError } from '../api/types'
+import { Movie, NowPlayingMoviesResponse, CustomError } from '../utils/types'
 import { IMAGES_BASE_URL } from '../utils/constants'
 
 const emptyMovie = {

@@ -1,25 +1,18 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react"
 
 import { Box } from "@mui/material"
-import MovieListItem from "../MovieListItem";
-import { PopularMovie } from "../../../../api/types";
 import PositionedMenu from "../PositionedMenu";
+import PopularMovies from "../PopularMovies";
+import { MovieListProps } from "../../../../utils/types";
+import MyMovies from "../MyMovies";
 
-interface MovieListProps {
-  popularMovies: PopularMovie[]
-  featuredMovieTitle: string
-}
-
-const MovieList = ({ popularMovies, featuredMovieTitle }: MovieListProps) => {
-  const [cleanMovieList, setCleanMovieList] = useState<PopularMovie[]>()
-  const maxAmountOfMovies = 4
+const MovieList = ({ popularMovies, featuredMovieTitle, myMoviesList }: MovieListProps) => {  
+  const [movieListType, setMovieListType] = useState('popular')
 
   useEffect(() => {
-    setCleanMovieList(popularMovies?.filter(movie => {
-      return movie?.original_title !== featuredMovieTitle
-    }))
-  }, [popularMovies, setCleanMovieList])
-  
+    console.log('movieType', movieListType)
+  }, [movieListType])
+
   return(
     <>
       <Box sx={{
@@ -34,24 +27,13 @@ const MovieList = ({ popularMovies, featuredMovieTitle }: MovieListProps) => {
         }
       }}>
         Ver:
-        <PositionedMenu />
+        <PositionedMenu setMovieListType={setMovieListType} />
       </Box>
-      <Box
-        sx={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignContent: 'flex-end',
-          flexWrap: 'wrap',
-          paddingRight: '114px',
-          '@media (max-width: 900px)': {
-            padding: '0',
-            alignContent: 'center',
-          }
-          }}>
-        {cleanMovieList?.slice(0, maxAmountOfMovies).map(movie => (
-          <MovieListItem movie={movie} key={movie?.id} />
-        ))}
-      </Box>
+      {
+        movieListType === 'popular' ?
+        <PopularMovies popularMovies={popularMovies} featuredMovieTitle={featuredMovieTitle} /> :
+        <MyMovies myMoviesList={myMoviesList} />
+      }
     </>
   )
 }

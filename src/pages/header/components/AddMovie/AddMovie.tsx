@@ -15,7 +15,7 @@ import { styled } from '@mui/material/styles'
 import CloseIcon from '@mui/icons-material/Close'
 
 import Clip from '../../../../assets/icons/Clip'
-import { MyMovieElement } from '../../../../api/types'
+import { MyMovieElement } from '../../../../utils/types'
 
 // Styled component example
 const CustomTextField = styled(TextField)({

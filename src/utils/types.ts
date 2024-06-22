@@ -58,3 +58,9 @@ export interface MyMovieElement {
   title?: string
   image?: string
 }
+
+export interface MovieListProps {
+  popularMovies?: PopularMovie[]
+  featuredMovieTitle?: string
+  myMoviesList?: MyMovieElement[]
+}

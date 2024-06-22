@@ -2,11 +2,11 @@ import './styles.css'
 
 import { Box } from "@mui/material"
 import PlayCircleFilledWhiteTwoToneIcon from '@mui/icons-material/PlayCircleFilledWhiteTwoTone';
-import { PopularMovie } from '../../../../api/types';
+import { MyMovieElement, PopularMovie } from '../../../../utils/types';
 import { IMAGES_BASE_URL } from '../../../../utils/constants';
 
 interface MovieListProps {
-  movie: PopularMovie;
+  movie: PopularMovie
 }
 
 const MovieListItem = ({ movie }: MovieListProps) => {

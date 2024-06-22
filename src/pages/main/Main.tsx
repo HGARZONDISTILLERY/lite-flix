@@ -2,7 +2,7 @@ import { Box, Grid } from "@mui/material"
 import Aside from "../aside/Aside"
 import Title from "./components/Title/Title"
 import Actions from "./components/Actions/Actions"
-import { Movie } from "../../api/types"
+import { Movie } from "../../utils/types"
 
 interface MainProps {
   featuredMovie: Movie | undefined

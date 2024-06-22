@@ -3,7 +3,7 @@ import { useQuery } from "react-query";
 import { collection, getDocs } from "firebase/firestore";
 
 import { fetchPopularMovies } from "../../api";
-import { MyMovieElement, PopularMovie, PopularMoviesResponse } from "../../api/types";
+import { MyMovieElement, PopularMovie, PopularMoviesResponse } from "../../utils/types";
 import MovieList from "./components/MovieList"
 import { firestore } from "../../firebase";
 
@@ -24,10 +24,8 @@ const Aside = ({ featuredMovieTitle }: AsideProps) => {
       querySnapshot.forEach((doc) => {
         const newMovie = doc.data()
         setMyMovies(prev => {
-          console.log('Previous state:', prev);
           const exists = prev.some(movie => JSON.stringify(movie) === JSON.stringify(newMovie));
           if (!exists) {
-            console.log('Previous state:', prev);
             return [...prev, newMovie];
           } else {
             return prev;
@@ -54,7 +52,10 @@ const Aside = ({ featuredMovieTitle }: AsideProps) => {
 
   return(
     <>
-      <MovieList popularMovies={popularMovies?.results as PopularMovie[]} featuredMovieTitle={featuredMovieTitle} />
+      <MovieList
+        popularMovies={popularMovies?.results as PopularMovie[]}
+        featuredMovieTitle={featuredMovieTitle}
+        myMoviesList={myMovies} />
     </>
   )
 }

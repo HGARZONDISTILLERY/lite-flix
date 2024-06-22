@@ -2,20 +2,31 @@ import * as React from 'react';
 import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
-import { theme } from '../../../../utils/constants';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 // Menu taken from https://mui.com/material-ui/react-menu/
 
-export default function PositionedMenu() {
+interface PositionedMenuTypes {
+  setMovieListType: (movieType: string) => void
+}
+
+export default function PositionedMenu({ setMovieListType }: PositionedMenuTypes) {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
-  };
+  }
   const handleClose = () => {
     setAnchorEl(null);
-  };
+  }
+
+  const handlePopularMovies = () => {
+    setMovieListType('popular')
+  }
+
+  const handleMyMovies = () => {
+    setMovieListType('my-movies')
+  }
 
   return (
     <div>
@@ -52,8 +63,8 @@ export default function PositionedMenu() {
         }}
         
       >
-        <MenuItem onClick={handleClose} sx={{color: '#fff'}}>Populares</MenuItem>
-        <MenuItem onClick={handleClose} sx={{color: '#fff'}}>Mis Películas</MenuItem>
+        <MenuItem onClick={handlePopularMovies} sx={{color: '#fff'}}>Populares</MenuItem>
+        <MenuItem onClick={handleMyMovies} sx={{color: '#fff'}}>Mis Películas</MenuItem>
       </Menu>
     </div>
   );

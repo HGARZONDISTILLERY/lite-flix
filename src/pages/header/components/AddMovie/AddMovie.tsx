@@ -1,6 +1,6 @@
 import './AddMovie.css'
 
-import * as React from 'react'
+import { useEffect, useState, useRef } from 'react'
 import {ref, uploadBytes, listAll, getDownloadURL } from 'firebase/storage'
 import { storage } from '../../../../firebase'
 
@@ -61,13 +61,13 @@ const containerMovieModalStyle = {
 const imageListRef = ref(storage, "images/")
 
 const AddMovie = () => {
-  const [open, setOpen] = React.useState(false)
+  const [open, setOpen] = useState(false)
   const handleOpen = () => setOpen(true)
   const handleClose = () => setOpen(false)
-  const [movieFileData, setMovieFile] = React.useState<any>()
-  const [imageList, setImageList] = React.useState<string[]>([])
+  const [movieFileData, setMovieFile] = useState<any>()
+  const [imageList, setImageList] = useState<string[]>([])
 
-  const titleRef = React.useRef<HTMLInputElement>(null)
+  const titleRef = useRef<HTMLInputElement>(null)
 
   const handleSave = async (e: any) => {
     e.preventDefault();
@@ -86,7 +86,7 @@ const AddMovie = () => {
     })
   }
 
-  React.useEffect(() => {
+  useEffect(() => {
     listAll(imageListRef).then(response => {
       response.items.forEach(item => {
         getDownloadURL(item).then((url) => {
@@ -100,14 +100,18 @@ const AddMovie = () => {
     })
   }, [])
 
-  React.useEffect(() => {
+  useEffect(() => {
     const curatedImageList = [...new Set(imageList)]
     console.log('curatedImageList', curatedImageList)
+    // Crear un objeto con la url de la imagen y el nombre
+    // Tiene que ser un estado que esté más arriba para que lo pueda consumir desde el Aside
+    // O lo puedo guardar en la DB como strings en https://www.youtube.com/watch?v=ad6IavyAHsQ
+    // Faltan los modales que manejan el estado de la subida
   }, [imageList])
 
   return (
     <div>
-      <Button sx={{color: '#fff'}} onClick={handleOpen}>+ Agregar película</Button>
+      <Button sx={{color: '#fff', fontSize: '18px'}} onClick={handleOpen}>+ <strong>Agregar película</strong></Button>
       <Modal
         open={open}
         onClose={handleClose}

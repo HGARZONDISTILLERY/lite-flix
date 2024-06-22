@@ -45,6 +45,9 @@ const Home = () => {
       width: '100vw',
       backgroundImage: `url(${IMAGES_BASE_URL}original${featuredMovie?.poster_path})`,
       paddingBottom: '114px',
+      '@media (max-width: 900px)': {
+        height: '70vh',
+      }
       }}>
       <Header />
       <Main featuredMovie={featuredMovie} />
@@ -53,18 +56,3 @@ const Home = () => {
 }
 
 export default Home
-
-
-/* export default function Home() {
-  const messageRef = useRef()
-
-  return(
-    <div>
-      <form>
-      <label>Enter message</label>
-        <input type="text" ref={messageRef.current} />
-        <button type="submit">Add</button>
-      </form>
-    </div>
-  )
-} */

@@ -27,12 +27,27 @@ const MovieList = ({ popularMovies, featuredMovieTitle }: MovieListProps) => {
         display: 'flex',
         justifyContent: 'end',
         alignItems: 'center',
-        paddingRight: '130px'
+        paddingRight: '130px',
+        '@media (max-width: 900px)': {
+          justifyContent: 'center',
+          padding: '0',
+        }
       }}>
         Ver:
         <PositionedMenu />
       </Box>
-      <Box sx={{display: 'flex', flexDirection: 'column', alignContent: 'flex-end', flexWrap: 'wrap', paddingRight: '114px'}}>
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignContent: 'flex-end',
+          flexWrap: 'wrap',
+          paddingRight: '114px',
+          '@media (max-width: 900px)': {
+            padding: '0',
+            alignContent: 'center',
+          }
+          }}>
         {cleanMovieList?.slice(0, maxAmountOfMovies).map(movie => (
           <MovieListItem movie={movie} key={movie?.id} />
         ))}

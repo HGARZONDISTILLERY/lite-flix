@@ -13,3 +13,10 @@ h3 {
   text-align: left;
   padding-left: 104px;
 }
+
+@media (max-width: 900px) {
+  .titleContainer {
+    text-align: center;
+    padding-left: 0;
+  }
+}

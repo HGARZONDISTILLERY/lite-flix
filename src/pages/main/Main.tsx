@@ -14,11 +14,22 @@ const Main = ({ featuredMovie }: MainProps) => {
   return(
     <Box component="main">
       <Grid container>
-        <Grid item xs={8} component={"section"} sx={{marginTop: '22%'}}>
+        <Grid item component={"section"} sx={{marginTop: '22%'}} xs={12} md={8}>
           <Title featuredMovieTitle={String(featuredMovie?.original_title)} />
           <Actions />
         </Grid>
-        <Grid item xs={4} component={"aside"} sx={{marginTop: '100px'}}>
+        <Grid
+          item
+          xs={12}
+          md={4}
+          component={"aside"}
+          sx={{
+            paddingTop: '100px',
+            '@media (max-width: 900px)': {
+              backgroundColor: '#242424',
+              paddingBottom: '50px'
+            }
+            }}>
           <Aside featuredMovieTitle={String(featuredMovie?.original_title)} />
         </Grid>
       </Grid>

@@ -20,7 +20,7 @@ const TemporaryDrawer = () => {
   const drawerElements = ['Inicio', 'Series', 'Peliculas', 'Agregaras recientemente', 'Populares', 'Mis peliculas', 'Mi lista']
 
   const DrawerList = (
-    <Box role="presentation" onClick={toggleDrawer(false)} sx={{position: 'relative'}}>
+    <Box role="presentation" sx={{position: 'relative'}}>
       <Box sx={{
         marginTop: '30px',
         marginLeft: '55px',

@@ -1,6 +1,6 @@
 import './styles.css'
 
-import { useEffect, useState, useRef } from 'react'
+import { useEffect, useState, useRef, FC } from 'react'
 import {ref, uploadBytes, listAll, getDownloadURL } from 'firebase/storage'
 import { addDoc, collection } from 'firebase/firestore'
 
@@ -63,7 +63,11 @@ const containerMovieModalStyle = {
 const imageListRef = ref(storage, "images/")
 const firebaseDbRef = collection(firestore, "movies")
 
-const AddMovie = () => {
+interface AddMovieProps {
+  AddMovieButton: FC<{ onClick: () => void }>
+}
+
+const AddMovieModal = ({ AddMovieButton }: AddMovieProps) => {
   const [open, setOpen] = useState(false)
   const handleOpen = () => setOpen(true)
   const handleClose = () => setOpen(false)
@@ -123,7 +127,8 @@ const AddMovie = () => {
 
   return (
     <div>
-      <Button sx={{color: '#fff', fontSize: '18px'}} onClick={handleOpen}>+ <strong>Agregar película</strong></Button>
+      {/* <Button sx={{color: '#fff', fontSize: '18px'}} onClick={handleOpen}>+ <strong>Agregar película</strong></Button> */}
+      <AddMovieButton onClick={handleOpen} />
       <Modal
         open={open}
         onClose={handleClose}
@@ -193,4 +198,4 @@ const AddMovie = () => {
   )
 }
 
-export default AddMovie
+export default AddMovieModal

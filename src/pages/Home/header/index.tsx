@@ -2,8 +2,9 @@ import { Grid, useMediaQuery } from '@mui/material'
 import './styles.css'
 import Logo from './components/Logo'
 import NavigationHeader from './components/NavigationHeader'
-import AddMovie from './components/AddMovie'
+import AddMovieModal from './components/AddMovieModal'
 import Hamburguer from '../../../assets/icons/Menu'
+import AddMovieButton from './components/AddMovieButton'
 
 
 const Header = () => {
@@ -31,7 +32,7 @@ const Header = () => {
             <Logo />
           </Grid>
           <Grid item xs={4}>
-            <AddMovie />
+            <AddMovieModal AddMovieButton={AddMovieButton} />
           </Grid>
           <Grid item xs={6}>
             <NavigationHeader />

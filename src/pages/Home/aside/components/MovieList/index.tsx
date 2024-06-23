@@ -3,8 +3,8 @@ import { useEffect, useState } from "react"
 import { Box } from "@mui/material"
 import PositionedMenu from "../PositionedMenu";
 import PopularMovies from "../PopularMovies";
-import { MovieListProps } from "../../../../utils/types";
 import MyMovies from "../MyMovies";
+import { MovieListProps } from "../../../../../utils/types";
 
 const MovieList = ({ popularMovies, featuredMovieTitle, myMoviesList }: MovieListProps) => {  
   const [movieListType, setMovieListType] = useState('popular')

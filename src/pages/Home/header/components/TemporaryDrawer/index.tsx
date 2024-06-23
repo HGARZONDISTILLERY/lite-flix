@@ -7,6 +7,8 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
+import AddMovieModal from '../AddMovieModal';
+import AddMovieButtonDrawer from '../AddMovieButtonDrawer';
 
 const TemporaryDrawer = () => {
   const [open, setOpen] = React.useState(false);
@@ -37,9 +39,7 @@ const TemporaryDrawer = () => {
           </ListItem>
         ))}
         <ListItem key='+ Agregar pelicula' disablePadding>
-          <ListItemButton>
-            <ListItemText disableTypography sx={{ fontFamily: 'Bebas Neue', margin: '30px 0' }} primary='+ Agregar pelicula' />
-          </ListItemButton>
+          <AddMovieModal AddMovieButton={AddMovieButtonDrawer} />
         </ListItem>
         <ListItem key='Cerrar sesion' disablePadding>
           <ListItemButton>

@@ -1,11 +1,12 @@
-import { useEffect, useState } from "react";
-import { useQuery } from "react-query";
-import { collection, getDocs } from "firebase/firestore";
+import { useEffect, useState } from "react"
+import { useQuery } from "react-query"
+import { collection, getDocs } from "firebase/firestore"
 
-import { fetchPopularMovies } from "../../api";
-import { MyMovieElement, PopularMovie, PopularMoviesResponse } from "../../utils/types";
+import { PopularMoviesResponse, MyMovieElement, PopularMovie } from "../../../utils/types"
 import MovieList from "./components/MovieList"
-import { firestore } from "../../firebase";
+import { firestore } from "../../../firebase"
+import { fetchPopularMovies } from "../../../api"
+
 
 interface AsideProps {
   featuredMovieTitle: string

@@ -1,8 +1,9 @@
-import './Actions.css'
+import './styles.css'
 
 import { Grid } from "@mui/material"
 import PlayArrowOutlinedIcon from '@mui/icons-material/PlayArrowOutlined';
-import { theme } from '../../../../utils/constants';
+import { theme } from '../../../../../utils/constants';
+
 
 const Actions = () => {
   return(

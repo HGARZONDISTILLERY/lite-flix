@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 
 import { Box } from "@mui/material"
-import { MovieListProps } from "../../../../utils/types";
+import { MovieListProps } from "../../../../../utils/types";
 
 const PopularMovies = ({ myMoviesList }: MovieListProps) => {
 

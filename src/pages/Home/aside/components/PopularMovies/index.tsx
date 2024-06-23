@@ -2,7 +2,8 @@ import { useState, useEffect } from "react";
 
 import { Box } from "@mui/material"
 import MovieListItem from "../MovieListItem";
-import { MovieListProps, PopularMovie } from "../../../../utils/types";
+import { MovieListProps, PopularMovie } from "../../../../../utils/types";
+
 
 const PopularMovies = ({ popularMovies, featuredMovieTitle }: MovieListProps) => {
   const [cleanMovieList, setCleanMovieList] = useState<PopularMovie[]>()

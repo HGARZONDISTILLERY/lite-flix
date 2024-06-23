@@ -1,9 +1,10 @@
 import { Grid, useMediaQuery } from '@mui/material'
-import './Header.css'
-import Logo from './components/Logo/Logo'
-import NavigationHeader from './components/NavigationHeader/NavigationHeader'
-import AddMovie from './components/AddMovie/AddMovie'
-import Hamburguer from '../../assets/icons/Menu'
+import './styles.css'
+import Logo from './components/Logo'
+import NavigationHeader from './components/NavigationHeader'
+import AddMovie from './components/AddMovie'
+import Hamburguer from '../../../assets/icons/Menu'
+
 
 const Header = () => {
   const isMobile = useMediaQuery('(max-width:900px)')

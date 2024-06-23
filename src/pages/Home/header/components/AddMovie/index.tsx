@@ -1,21 +1,21 @@
-import './AddMovie.css'
+import './styles.css'
 
 import { useEffect, useState, useRef } from 'react'
 import {ref, uploadBytes, listAll, getDownloadURL } from 'firebase/storage'
-import { storage, firestore } from '../../../../firebase'
 import { addDoc, collection } from 'firebase/firestore'
 
+import { DropzoneArea } from "mui-file-dropzone"
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography'
 import Modal from '@mui/material/Modal'
-import { DropzoneArea } from "mui-file-dropzone"
 import { TextField } from '@mui/material'
 import { styled } from '@mui/material/styles'
 import CloseIcon from '@mui/icons-material/Close'
 
-import Clip from '../../../../assets/icons/Clip'
-import { MyMovieElement } from '../../../../utils/types'
+import { storage, firestore } from '../../../../../firebase'
+import { MyMovieElement } from '../../../../../utils/types'
+import Clip from '../../../../../assets/icons/Clip'
 
 // Styled component example
 const CustomTextField = styled(TextField)({

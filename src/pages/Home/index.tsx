@@ -1,14 +1,15 @@
 // import { useRef } from "react"
 
-import './Home.css'
+import './styles.css'
 import { Box } from "@mui/material"
-import Header from "./header/Header"
-import Main from "./main/Main"
+
+import Main from "./main"
 import { useState, useEffect } from 'react'
 import { useQuery } from 'react-query'
-import { fetchNowPlayingMovies } from '../api'
-import { Movie, NowPlayingMoviesResponse, CustomError } from '../utils/types'
-import { IMAGES_BASE_URL } from '../utils/constants'
+import { fetchNowPlayingMovies } from '../../api'
+import { Movie, NowPlayingMoviesResponse, CustomError } from '../../utils/types'
+import { IMAGES_BASE_URL } from '../../utils/constants'
+import Header from './header'
 
 const emptyMovie = {
   adult: false,

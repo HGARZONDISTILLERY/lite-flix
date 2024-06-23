@@ -1,5 +1,5 @@
 import './App.css'
-import Home from './pages/Home'
+import Home from './pages/Home';
 import { QueryClient, QueryClientProvider } from "react-query";
 import { ThemeProvider } from '@mui/material';
 import { theme } from './utils/constants';

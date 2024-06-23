@@ -1,4 +1,4 @@
-import './NavigationHeader.css'
+import './styles.css'
 
 import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
 import FaceIcon from '@mui/icons-material/Face';

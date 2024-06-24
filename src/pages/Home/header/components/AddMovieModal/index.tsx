@@ -87,7 +87,6 @@ const containerMovieModalMobileStyle = {
   bgcolor: '#333333',
   boxShadow: 24,
   p: 4,
-  overflowY: 'auto',
 };
 
 const StyledModal = styled(Modal)`
@@ -189,10 +188,6 @@ const AddMovieModal = ({ AddMovieButton }: AddMovieProps) => {
         console.error(e);
       }
     }
-  }, [movieElement]);
-
-  useEffect(() => {
-    console.log("movieElement", movieElement);
   }, [movieElement]);
 
   const addMovieContentForm = (

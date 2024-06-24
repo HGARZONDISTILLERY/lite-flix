@@ -6,12 +6,22 @@
   text-align: center;
   position: relative;
   margin-top: 32px;
+  display:"flex";
+  flex-direction:"column";
+  align-items:"center";
+  justify-content:"center";
+  height:"100%";
+}
+
+.movieListItem:hover {
+  opacity: .8;
+  cursor: pointer;
 }
 
 .movieListItem p {
   color: #fff;
   font-size: 16px;
-  padding: 20px;
+  padding: 10px;
 }
 
 .movieListItem svg {
@@ -24,4 +34,10 @@
   position: absolute;
   bottom: 0;
   width: 220px;
+}
+
+svg.star-icon{
+  width: 30px;
+  height: 30px;
+  fill: '#64EEBC'
 }

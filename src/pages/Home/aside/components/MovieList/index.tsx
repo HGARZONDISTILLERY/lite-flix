@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import { Box } from "@mui/material";
 import PositionedMenu from "../PositionedMenu";
@@ -12,10 +12,6 @@ const MovieList = ({
   myMoviesList,
 }: MovieListProps) => {
   const [movieListType, setMovieListType] = useState("popular");
-
-  useEffect(() => {
-    console.log("movieType", movieListType);
-  }, [movieListType]);
 
   return (
     <>

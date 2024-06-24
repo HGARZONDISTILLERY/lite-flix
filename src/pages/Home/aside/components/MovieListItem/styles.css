@@ -21,7 +21,6 @@
 .movieListItem p {
   color: #fff;
   font-size: 16px;
-  padding: 10px;
 }
 
 .movieListItem svg {
@@ -36,8 +35,12 @@
   width: 220px;
 }
 
+.star-icon {
+  fill: '#64EEBC';
+}
+
 svg.star-icon{
-  width: 30px;
-  height: 30px;
-  fill: '#64EEBC'
+  width: 20px;
+  height: 20px;
+  margin-left: 20px;
 }

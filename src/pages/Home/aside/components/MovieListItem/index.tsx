@@ -30,29 +30,36 @@ const MovieListItem = ({ movie }: MovieListProps) => {
     >
       <Box className="movieListItemDetails" display="flex" flexDirection="column" alignItems="center" justifyContent="center">
         {!hovered ? (
+          <>
+            <div>
+              <PlayCircleFilledWhiteTwoToneIcon />
+            </div>
             <Typography align="center" alignItems="center">
-              <Box>
-                <PlayCircleFilledWhiteTwoToneIcon />
-              </Box>
-              <Box>
+              <span>
                 {movie?.original_title}
-              </Box>
+              </span>
             </Typography>
+          </>
           ) : (
-            <Typography display="flex" alignItems="center">
-              <PlayHover /> {movie?.original_title}
-            </Typography>
+            <>
+              <div><PlayHover /></div>
+              <Typography display="flex" alignItems="center">
+                {movie?.original_title}
+              </Typography>
+            </>
           )}
           {hovered && (
             <Grid container>
               <Grid item xs={6}>
-                <Typography>
+                <Typography display="flex" alignItems="center" justifyContent="left">
                   <StarIcon className="star-icon" />
                   <strong>{Math.round(movie?.vote_average)}</strong>
                 </Typography>
               </Grid>
               <Grid item xs={6}>
-                <Typography><strong>{movieYear}</strong></Typography>
+                <Typography display="flex" alignItems="center" justifyContent="right" sx={{paddingRight: '10px'}}>
+                  <strong>{movieYear}</strong>
+                </Typography>
               </Grid>
             </Grid>
           )}

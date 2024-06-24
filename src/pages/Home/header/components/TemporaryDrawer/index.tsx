@@ -9,6 +9,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import AddMovieModal from '../AddMovieModal';
 import AddMovieButtonDrawer from '../AddMovieButtonDrawer';
+import Menu from '../../../../../assets/icons/Menu';
 
 const TemporaryDrawer = () => {
   const [open, setOpen] = React.useState(false);
@@ -52,7 +53,10 @@ const TemporaryDrawer = () => {
 
   return (
     <div>
-      <MenuIcon onClick={toggleDrawer(true)} sx={{ cursor: 'pointer' }} />
+      {/* <MenuIcon onClick={toggleDrawer(true)} sx={{ cursor: 'pointer' }} /> */}
+      <Box onClick={toggleDrawer(true)} sx={{ cursor: 'pointer' }}>
+        <Menu />
+      </Box>
       <Drawer anchor='right' open={open} onClose={toggleDrawer(false)} PaperProps={{
         sx: {
           background: '#242424',

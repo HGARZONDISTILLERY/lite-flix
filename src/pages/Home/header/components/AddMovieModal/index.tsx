@@ -205,7 +205,7 @@ const AddMovieModal = ({ AddMovieButton }: AddMovieProps) => {
           onChange={(event) => setMovieFile(event)}
           dropzoneText="Agregá un archivo o arrastralo y soltalo aquí"
           dropzoneClass="dropzone"
-          Icon={<Clip />}
+          Icon={() => <Clip />}
           filesLimit={1}
           showAlerts={false}
           showFileNames

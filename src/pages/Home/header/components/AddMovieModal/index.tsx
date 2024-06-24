@@ -9,7 +9,7 @@ import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
-import { TextField } from "@mui/material";
+import { TextField, useMediaQuery } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import CloseIcon from "@mui/icons-material/Close";
 
@@ -77,6 +77,25 @@ const containerMovieModalStyle = {
   textAlign: "center",
 };
 
+const containerMovieModalMobileStyle = {
+  position: 'absolute',
+  top: '50%', 
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: '90%',
+  height: '90vh',
+  bgcolor: '#333333',
+  boxShadow: 24,
+  p: 4,
+  overflowY: 'auto',
+};
+
+const StyledModal = styled(Modal)`
+  & > .MuiBackdrop-root {
+    backdrop-filter: blur(2px);
+  }
+`;
+
 const firebaseDbRef = collection(firestore, "movies");
 
 interface AddMovieProps {
@@ -84,6 +103,7 @@ interface AddMovieProps {
 }
 
 const AddMovieModal = ({ AddMovieButton }: AddMovieProps) => {
+  const isMobile = useMediaQuery("(max-width:900px)");
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => {
@@ -263,18 +283,13 @@ const AddMovieModal = ({ AddMovieButton }: AddMovieProps) => {
   return (
     <div>
       <AddMovieButton onClick={handleOpen} />
-      <Modal
+      <StyledModal
         open={open}
         onClose={handleClose}
         aria-labelledby="movie-modal-title"
         aria-describedby="movie-modal-description"
-        sx={{
-          "& > .MuiBackdrop-root": {
-            backdropFilter: "blur(2px)",
-          },
-        }}
       >
-        <Box sx={containerMovieModalStyle}>
+        <Box sx={isMobile ? containerMovieModalMobileStyle : containerMovieModalStyle}>
           <Box sx={{ width: "100%", textAlign: "right", color: "#fff" }}>
             <CloseIcon onClick={handleClose} sx={{ cursor: "pointer" }} />
           </Box>
@@ -284,7 +299,7 @@ const AddMovieModal = ({ AddMovieButton }: AddMovieProps) => {
             !movieElementUploaded &&
             addMovieContentForm}
         </Box>
-      </Modal>
+      </StyledModal>
     </div>
   );
 };

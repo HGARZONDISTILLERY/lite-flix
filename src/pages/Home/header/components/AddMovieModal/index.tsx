@@ -19,7 +19,7 @@ import Clip from "../../../../../assets/icons/Clip";
 import Logo from "../Logo";
 import { BarLoader } from "react-spinners";
 
-// Styled component examples
+// Styled components
 const CustomTextField = styled(TextField)({
   "& label": {
     color: "#fff",

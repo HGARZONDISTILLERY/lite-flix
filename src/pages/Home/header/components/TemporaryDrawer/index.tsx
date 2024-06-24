@@ -9,9 +9,11 @@ import CloseIcon from "@mui/icons-material/Close";
 import AddMovieModal from "../AddMovieModal";
 import AddMovieButtonDrawer from "../AddMovieButtonDrawer";
 import Menu from "../../../../../assets/icons/Menu";
+import { useMediaQuery } from "@mui/material";
 
 const TemporaryDrawer = () => {
   const [open, setOpen] = React.useState(false);
+  const isMobile = useMediaQuery("(max-width:900px)");
 
   const toggleDrawer = (newOpen: boolean) => () => {
     setOpen(newOpen);
@@ -74,14 +76,14 @@ const TemporaryDrawer = () => {
         <Menu />
       </Box>
       <Drawer
-        anchor="right"
+        anchor={isMobile ? "bottom" : "right"}
         open={open}
         onClose={toggleDrawer(false)}
         PaperProps={{
           sx: {
             background: "#242424",
             color: "#fff",
-            width: "40%!important",
+            width: isMobile ? "100%!important" : "40%!important",
           },
         }}
       >

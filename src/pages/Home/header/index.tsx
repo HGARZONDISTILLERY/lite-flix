@@ -3,8 +3,9 @@ import "./styles.css";
 import Logo from "./components/Logo";
 import NavigationHeader from "./components/NavigationHeader";
 import AddMovieModal from "./components/AddMovieModal";
-import Hamburguer from "../../../assets/icons/Menu";
 import AddMovieButton from "./components/AddMovieButton";
+import profile from "../../../assets/profile.png";
+import TemporaryDrawer from "./components/TemporaryDrawer";
 
 const Header = () => {
   const isMobile = useMediaQuery("(max-width:900px)");
@@ -16,17 +17,15 @@ const Header = () => {
           <Grid
             item
             xs={2}
-            sx={{
-              padding: "10px",
-            }}
+            sx={{padding: '10px'}}
           >
-            <Hamburguer />
+            <TemporaryDrawer />
           </Grid>
           <Grid item xs={8} sx={{ textAlign: "center" }}>
             <Logo />
           </Grid>
           <Grid item xs={2}>
-            ...
+            <img src={profile} alt="Profile" />
           </Grid>
         </Grid>
       ) : (

@@ -19,9 +19,8 @@ const MovieList = ({
         sx={{
           color: "#fff",
           display: "flex",
-          justifyContent: "end",
+          justifyContent: "center",
           alignItems: "center",
-          paddingRight: "130px",
           "@media (max-width: 900px)": {
             justifyContent: "center",
             padding: "0",

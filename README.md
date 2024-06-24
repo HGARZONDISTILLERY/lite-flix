@@ -2,7 +2,7 @@
 https://hgarzondistillery.github.io/lite-flix/
 
 ### Technologies
-- Frontend: Vite, React, TS, React-Query, MUI material, Dropzone, Prettier
+- Frontend: Vite, React, TS, React-Query, MUI material, Dropzone, Prettier, Animate.css
 - Backend: Firebase
 - Devops: Github Pages
 

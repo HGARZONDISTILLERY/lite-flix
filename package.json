@@ -1,7 +1,7 @@
 {
-  "name": "vite-project",
-  "private": true,
-  "version": "0.0.0",
+  "name": "lite-flix",
+  "private": false,
+  "version": "0.0.1",
   "type": "module",
   "homepage": "https://hgarzondistillery.github.io/lite-flix/",
   "scripts": {

@@ -78,13 +78,13 @@ const containerMovieModalStyle = {
 };
 
 const containerMovieModalMobileStyle = {
-  position: 'absolute',
-  top: '50%', 
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-  width: '90%',
-  height: '90vh',
-  bgcolor: '#333333',
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: "90%",
+  height: "90vh",
+  bgcolor: "#333333",
   boxShadow: 24,
   p: 4,
 };
@@ -284,7 +284,11 @@ const AddMovieModal = ({ AddMovieButton }: AddMovieProps) => {
         aria-labelledby="movie-modal-title"
         aria-describedby="movie-modal-description"
       >
-        <Box sx={isMobile ? containerMovieModalMobileStyle : containerMovieModalStyle}>
+        <Box
+          sx={
+            isMobile ? containerMovieModalMobileStyle : containerMovieModalStyle
+          }
+        >
           <Box sx={{ width: "100%", textAlign: "right", color: "#fff" }}>
             <CloseIcon onClick={handleClose} sx={{ cursor: "pointer" }} />
           </Box>

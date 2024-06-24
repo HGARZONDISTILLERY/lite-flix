@@ -1,6 +1,6 @@
 import "./styles.css";
 
-import { Box, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 
 interface TitleProps {
   featuredMovieTitle: string;
@@ -12,7 +12,9 @@ const Title = ({ featuredMovieTitle }: TitleProps) => {
       <h3>
         Original de <strong>Liteflix</strong>
       </h3>
-      <h1 className="title animate__animated animate__tada">{featuredMovieTitle}</h1>
+      <h1 className="title animate__animated animate__tada">
+        {featuredMovieTitle}
+      </h1>
     </Box>
   );
 };

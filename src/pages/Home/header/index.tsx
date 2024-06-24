@@ -14,11 +14,7 @@ const Header = () => {
     <header>
       {isMobile ? (
         <Grid container>
-          <Grid
-            item
-            xs={2}
-            sx={{padding: '10px'}}
-          >
+          <Grid item xs={2} sx={{ padding: "10px" }}>
             <TemporaryDrawer />
           </Grid>
           <Grid item xs={8} sx={{ textAlign: "center" }}>

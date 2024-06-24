@@ -1,18 +1,20 @@
-import './styles.css'
+import "./styles.css";
 
-import { Box } from "@mui/material"
+import { Box } from "@mui/material";
 
 interface TitleProps {
   featuredMovieTitle: string;
 }
 
 const Title = ({ featuredMovieTitle }: TitleProps) => {
-  return(
+  return (
     <Box className="titleContainer">
-      <h3>Original de <strong>Liteflix</strong></h3>
+      <h3>
+        Original de <strong>Liteflix</strong>
+      </h3>
       <h1>{featuredMovieTitle}</h1>
     </Box>
-  )
-}
+  );
+};
 
-export default Title
+export default Title;

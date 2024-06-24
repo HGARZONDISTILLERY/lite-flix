@@ -1,32 +1,35 @@
-import { Grid, useMediaQuery } from '@mui/material'
-import './styles.css'
-import Logo from './components/Logo'
-import NavigationHeader from './components/NavigationHeader'
-import AddMovieModal from './components/AddMovieModal'
-import Hamburguer from '../../../assets/icons/Menu'
-import AddMovieButton from './components/AddMovieButton'
-
+import { Grid, useMediaQuery } from "@mui/material";
+import "./styles.css";
+import Logo from "./components/Logo";
+import NavigationHeader from "./components/NavigationHeader";
+import AddMovieModal from "./components/AddMovieModal";
+import Hamburguer from "../../../assets/icons/Menu";
+import AddMovieButton from "./components/AddMovieButton";
 
 const Header = () => {
-  const isMobile = useMediaQuery('(max-width:900px)')
+  const isMobile = useMediaQuery("(max-width:900px)");
 
-  return(
+  return (
     <header>
-      {
-        isMobile ? 
+      {isMobile ? (
         <Grid container>
-          <Grid item xs={2} sx={{
-            padding: '10px',
-          }}>
+          <Grid
+            item
+            xs={2}
+            sx={{
+              padding: "10px",
+            }}
+          >
             <Hamburguer />
           </Grid>
-          <Grid item xs={8} sx={{textAlign: 'center'}}>
+          <Grid item xs={8} sx={{ textAlign: "center" }}>
             <Logo />
           </Grid>
           <Grid item xs={2}>
             ...
           </Grid>
-        </Grid> :
+        </Grid>
+      ) : (
         <Grid container>
           <Grid item xs={2}>
             <Logo />
@@ -38,9 +41,9 @@ const Header = () => {
             <NavigationHeader />
           </Grid>
         </Grid>
-      }
+      )}
     </header>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

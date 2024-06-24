@@ -1,4 +1,4 @@
-import Button from '@mui/material/Button'
+import Button from "@mui/material/Button";
 
 interface AddMovieButtonProps {
   onClick: () => void;
@@ -6,10 +6,10 @@ interface AddMovieButtonProps {
 
 const AddMovieButton = ({ onClick }: AddMovieButtonProps) => {
   return (
-    <Button sx={{ color: '#fff', fontSize: '18px' }} onClick={onClick}>
+    <Button sx={{ color: "#fff", fontSize: "18px" }} onClick={onClick}>
       + <strong>Agregar película</strong>
     </Button>
-  )
-}
+  );
+};
 
-export default AddMovieButton
+export default AddMovieButton;

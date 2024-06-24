@@ -1,9 +1,11 @@
-import './styles.css'
+import "./styles.css";
 
 const Logo = () => {
-  return(
-    <p><strong>Lite</strong>flix</p>
-  )
-}
+  return (
+    <p>
+      <strong>Lite</strong>flix
+    </p>
+  );
+};
 
-export default Logo
+export default Logo;

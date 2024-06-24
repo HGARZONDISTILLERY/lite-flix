@@ -1,16 +1,10 @@
 .movieListItem {
-  background-image: url("");
   border-radius: 5px;
   width: 220px;
   height: 146px;
   text-align: center;
   position: relative;
   margin-top: 32px;
-  display: "flex";
-  flex-direction: "column";
-  align-items: "center";
-  justify-content: "center";
-  height: "100%";
 }
 
 .movieListItem:hover {

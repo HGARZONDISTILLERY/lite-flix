@@ -24,9 +24,8 @@ const PopularMovies = ({
       sx={{
         display: "flex",
         flexDirection: "column",
-        alignContent: "flex-end",
+        alignContent: "center",
         flexWrap: "wrap",
-        paddingRight: "114px",
         "@media (max-width: 900px)": {
           padding: "0",
           alignContent: "center",

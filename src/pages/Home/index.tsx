@@ -51,7 +51,6 @@ const Home = () => {
   return (
     <Box
       sx={{
-        width: "100vw",
         backgroundImage: `url(${IMAGES_BASE_URL}original${featuredMovie?.poster_path})`,
         paddingBottom: "114px",
         "@media (max-width: 900px)": {

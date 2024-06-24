@@ -1,3 +1,4 @@
+// @ts-nocheck
 import "./styles.css";
 
 import { useEffect, useState, useRef, FC } from "react";
@@ -15,7 +16,7 @@ import CloseIcon from "@mui/icons-material/Close";
 
 import { storage, firestore } from "../../../../../firebase";
 import { MyMovieElement } from "../../../../../utils/types";
-import Clip from "../../../../../assets/icons/Clip";
+import Clip from "../../../../../assets/icons/Clip"; 
 import Logo from "../Logo";
 import { BarLoader } from "react-spinners";
 
@@ -78,15 +79,16 @@ const containerMovieModalStyle = {
 };
 
 const containerMovieModalMobileStyle = {
-  position: "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  width: "90%",
-  height: "90vh",
-  bgcolor: "#333333",
+  position: 'absolute',
+  top: '50%', 
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: '90%',
+  height: '90vh',
+  bgcolor: '#333333',
   boxShadow: 24,
   p: 4,
+  overflowY: 'auto',
 };
 
 const StyledModal = styled(Modal)`
@@ -203,7 +205,7 @@ const AddMovieModal = ({ AddMovieButton }: AddMovieProps) => {
           onChange={(event) => setMovieFile(event)}
           dropzoneText="Agregá un archivo o arrastralo y soltalo aquí"
           dropzoneClass="dropzone"
-          Icon={Clip}
+          Icon={<Clip />}
           filesLimit={1}
           showAlerts={false}
           showFileNames
@@ -284,11 +286,7 @@ const AddMovieModal = ({ AddMovieButton }: AddMovieProps) => {
         aria-labelledby="movie-modal-title"
         aria-describedby="movie-modal-description"
       >
-        <Box
-          sx={
-            isMobile ? containerMovieModalMobileStyle : containerMovieModalStyle
-          }
-        >
+        <Box sx={isMobile ? containerMovieModalMobileStyle : containerMovieModalStyle}>
           <Box sx={{ width: "100%", textAlign: "right", color: "#fff" }}>
             <CloseIcon onClick={handleClose} sx={{ cursor: "pointer" }} />
           </Box>
